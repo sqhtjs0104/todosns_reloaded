@@ -46,8 +46,31 @@ export const Error = styled.span`
 `;
 
 export const Switcher = styled.span`
-margin-top: 20px;
+margin: 20px 0;
 a {
 	color: #1d9bf0;
 }
+`;
+
+export const Button = styled.span`
+	margin-top: 10px;
+    background: white;
+    font-weight: 500;
+    width: 100%;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 0;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+`;
+
+export const Logo = styled.img`
+    height: 25px;
 `;

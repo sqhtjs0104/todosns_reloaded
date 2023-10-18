@@ -8,9 +8,8 @@ import auth from "../firebase";
 
 import { styled } from "styled-components";
 
-import { Wrapper, Title, Form, Input, Error, Switcher } from "../components/auto-compnents";
-import GoogleButton from "../components/google-button";
-import GithubButton from "../components/github-button";
+import { Wrapper, Title, Form, Input, Error, Switcher } from "../components/auth-compnents";
+import ExternalLoginButton from "../components/external-login-button";
 
 export default function SignUp() {
 	const navigate = useNavigate();
@@ -57,8 +56,8 @@ export default function SignUp() {
 			<Switcher>
 				Don't have an account? <Link to="/signUp">Join to Us &rarr;</Link>
 			</Switcher>
-			<GoogleButton />
-			<GithubButton />
+			<ExternalLoginButton target="google" />
+			<ExternalLoginButton target="github" />
 		</Wrapper>
 	</>;
 }
