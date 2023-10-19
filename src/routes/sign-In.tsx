@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import auth from "../firebase";
+import { auth } from "../firebase";
 
 import { styled } from "styled-components";
 

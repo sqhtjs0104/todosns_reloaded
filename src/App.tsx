@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import reset from "styled-reset"
 import { createGlobalStyle, styled } from "styled-components"
 
-import auth from "./firebase"
+import { auth } from "./firebase"
 
 import LoadingScreen from "./components/loading-screen"
 import Layout from "./components/layout"
