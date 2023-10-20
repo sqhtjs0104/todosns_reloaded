@@ -27,6 +27,9 @@ const TextArea = styled.textarea`
         outline: none;
         border-color: #1d9bf0;
     }
+    &::-webkit-scrollbar {
+        width: 0;
+    }
 `;
 
 const AttachFileButton = styled.label`
