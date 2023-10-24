@@ -34,6 +34,12 @@ const Payload = styled.p`
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
+const Buttons = styled.div`
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+`;
+
 const DeleteButton = styled.button`
     background: tomato;
     color: white;
@@ -46,8 +52,21 @@ const DeleteButton = styled.button`
     cursor: pointer;
 `;
 
+const EditButton = styled.button`
+    background: #74c2f7;
+    color: white;
+    font-weight: 600;
+    border: 0;
+    font-size: 12px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+`;
+
 export default function Todo({ username, photo, todo, userId, id }: ITodo) {
     const user = auth.currentUser;
+
     const onDelete = async () => {
         if (user?.uid !== userId) return;
         try {
@@ -62,14 +81,21 @@ export default function Todo({ username, photo, todo, userId, id }: ITodo) {
         } catch (error) {
             console.error(error);
         }
-    }
+    };
+
+    const onEdit = () => {
+
+    };
 
     return <>
         <Wrapper>
             <Column>
                 <Username>{username}</Username>
                 <Payload>{todo}</Payload>
-                {user?.uid === userId ? <DeleteButton onClick={onDelete}>Delete</DeleteButton> : null}
+                <Buttons>
+                    {user?.uid === userId ? <EditButton onClick={onEdit}>Edit</EditButton> : null}
+                    {user?.uid === userId ? <DeleteButton onClick={onDelete}>Delete</DeleteButton> : null}
+                </Buttons>
             </Column>
             <Column>
                 {photo ? <Photo src={photo}></Photo> : null}
